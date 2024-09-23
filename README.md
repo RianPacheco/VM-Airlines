@@ -23,10 +23,10 @@ Crédito (em até 5x)
 Pix
 - 5. Check-in
 Após a conclusão da compra, o usuário pode realizar o check-in utilizando o número do cartão de viagem comprado.
-Tecnologias Utilizadas
-HTML: Estrutura da página
-CSS: Estilização visual
-JavaScript: Funcionalidade e interação do usuário
+## Tecnologias Utilizadas
+ - [x] HTML: Estrutura da página
+ - [x] CSS: Estilização visual
+ - [x] JavaScript: Funcionalidade e interação do usuário
 ## Como Usar
 Clone o repositório:
 
@@ -39,7 +39,7 @@ Abra o arquivo index.html em um navegador web.
 
 Siga as instruções na página para selecionar assentos, gerenciar bagagens e finalizar a compra.
 
-- Contribuições
+## Contribuições
 Sinta-se à vontade para contribuir com melhorias ou correções. Para isso, siga os seguintes passos:
 
 - Crie um fork do repositório.
@@ -49,10 +49,10 @@ git checkout -b feature/nome-da-feature
 ```
 Faça suas alterações e envie um pull request.
 
-- Licença
-Este projeto é licenciado sob a Licença MIT.
+## Licença
+- Este projeto é licenciado sob a Licença MIT.
 
-- Contato
-Para dúvidas ou sugestões, entre em contato:
+## Contato
+- Para dúvidas ou sugestões, entre em contato:
 
-- Email: rian.2023160@aluno.pedreira.org
+## Email: rian.2023160@aluno.pedreira.org
