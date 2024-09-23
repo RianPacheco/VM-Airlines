@@ -106,6 +106,24 @@
                             <div><span class="premium"></span> PREMIUM</div>
                             <div><span class="executiva"></span> EXECUTIVA</div>
                         </div>
+                        <button id="despache">Despache</button><br>
+                        <p class="valorDespache">Valor despache: 0</p>
+                    </div>
+                </div>
+                <div id="modal" class="modal">
+                    <div class="modal-content">
+                        <span class="close-btn">&times;</span>
+                        <h2>NECESSITA DE DESPACHE</h2>
+                        <div><br><br>
+                            <button id="simBtn">SIM</button>
+                            <button id="naoBtn">NÃO</button>
+                        </div><br><br>
+                        <div id="simContent" style="display: none;">
+                            <label for="numBolsas">NUMERO DE BOLSAS:</label>
+                            <input type="number" id="numBolsas" min="0" value="0"><br><br>
+                            <p>O VALOR DO DESPACHE É DE: R$<span id="valorDespache">0</span></p><br><br>
+                            <button id="confirmarBtn">CONFIRMAR</button>
+                        </div>
                     </div>
                 </div>
         </section>

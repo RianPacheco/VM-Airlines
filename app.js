@@ -63,4 +63,35 @@ document.getElementById('sac-form').addEventListener('submit', function(event) {
     }
 });
 
+const modalDespache = document.querySelector('#despache');
+
+modalDespache.addEventListener('click', function() {
+    document.getElementById('modal').style.display = 'block';
+});
+
+document.querySelector('.close-btn').addEventListener('click', function() {
+    document.getElementById('modal').style.display = 'none';
+});
+
+document.getElementById('simBtn').addEventListener('click', function() {
+    document.getElementById('simContent').style.display = 'block';
+});
+
+document.getElementById('naoBtn').addEventListener('click', function() {
+    document.getElementById('simContent').style.display = 'none';
+});
+
+document.getElementById('numBolsas').addEventListener('input', function() {
+    const numBolsas = parseInt(this.value) || 0;
+    const valorDespache = numBolsas * 100;
+    document.getElementById('valorDespache').textContent = valorDespache;
+    valorDespache = document.getElementById('valorDespache').innerText;
+    document.querySelector('.valorDespache').innerText = `Valor despache: R$${valorDespache}`;
+});
+
+window.addEventListener('click', function(event) {
+    if (event.target == document.getElementById('modal')) {
+        document.getElementById('modal').style.display = 'none';
+    }
+});
 
