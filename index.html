@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./assets/image/flaticonm.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <title>VM - AIRLINES</title>
+</head>
+
+<body>
+
+    <header class="cabecalho">
+        <div class="cabecalho__navbar ">
+            <div class="cabecalho__logo">
+                <img src="./assets/image/Logo.png" alt="logo VM_AIRLINES" class="logo__imagem">
+            </div>
+            <div class="navbar__opcoes">
+                <a href="#destinos" class="opcao__link">Destinos</a>
+                <a href="#minhas_viagens" class="opcao__link">Minhas Viagens</a>
+                <a href="#sac" class="opcao__link">Central de Atendimento</a>
+            </div>
+            <div class="navbar__container">
+                <button class="menu__botao">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+                <nav class="menu">
+                    <ul class="menu__lista">
+                        <li class="lista__item">
+                            <a href="#destinos" class="item__link">Destinos</a>
+                        </li>
+                        <li class="lista__item">
+                            <a href="#minhas_viagens" class="item__link">Minhas Viagens</a>
+                        </li>
+                        <li class="lista__item">
+                            <a href="#sac" class="item__link">Central de Atendimento</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="cabecalho__banner">
+            <img src="./assets/image/foto_cabecalho.png" alt="Foto de avião" class="banner__imagem">
+            <div class="banner__infos">
+                <h1 class="infos__titulo">Sobre Nós</h1><br>
+                <p class="infos__texto">A VM Airlines é uma companhia aérea que opera tanto voos nacionais quanto
+                    internacionais, utilizando uma frota moderna para atender aos seus passageiros. A empresa se destaca
+                    por oferecer uma variedade de serviços, incluindo diferentes classes de cabine e opções de
+                    entretenimento a bordo. Com foco na eficiência, a VM Airlines facilita o check-in e o embarque, além
+                    de gerenciar a bagagem de forma eficaz. A companhia também investe em tecnologia para melhorar a
+                    experiência de viagem e garantir a satisfação dos seus clientes.</p>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="destinos" id="destinos">
+            <div class="container">
+            <div class="destinos">
+                <h2>DESTINOS</h2>
+                <div class="destino back1">
+                    <label for="saoPauloMinas">SÃO PAULO → MINAS GERAIS</label><br/>
+                    <span>SAÍDA 15:30<br/> PREVISÃO 17:50</span><br/>
+                    <label for="saoPauloMinas">SELECIONE O TIPO DA PASSAGEM</label><br/>
+                    <select name="opcoes" id="opcoes">
+                        <option value="Economica">Economica</option>
+                        <option value="Economica Premium">Economica Premium</option>
+                        <option value="Executiva" selected>Executiva</option>
+                    </select>
+                </div>
+                <p>OU</p>
+                <br>
+                <div class="destino back2">
+                    <label for="rioAcre">RIO DE JANEIRO → ACRE</label><br/>
+                    <span>SAÍDA 7:20<br/> PREVISÃO 17:20</span><br/>
+                    <label for="saoPauloMinas">SELECIONE O TIPO DA PASSAGEM</label><br/>
+                    <select name="opcoes" id="opcoes">
+                        <option value="Economica">Economica</option>
+                        <option value="Economica Premium">Economica Premium</option>
+                        <option value="Executiva" selected>Executiva</option>
+                    </select>
+                </div>
+            </div>
+            <div class="image">
+                <img src="./assets/image/aviao_destinos.PNG" alt="Avião decolando">
+            </div>
+        </div>
+        </section>
+        <section>
+            <div class="poltronas">
+                <div class="vazio" id="po1">
+                    <p></p>
+                </div>
+                <div class="vazio" id="po2">
+                    <p></p>
+                </div>
+                <div class="vazio" id="po3">
+                    <p></p>
+                    <p></p>
+                </div>
+                <div class="vazio" id="po4">
+                    <p></p>
+                    <p></p>
+                </div>
+                <div class="vazio" id="po5">
+                    <p></p>
+                    <p></p>
+                </div>
+                <div class="vazio" id="po6">
+                    <p></p>
+                    <p></p>
+                </div>
+                <div class="vazio" id="po7">
+                    <p></p>
+                    <p></p>
+                </div>
+                <div class="vazio" id="po8">
+                    <p></p>
+                    <p></p>
+                </div>
+                <div class="vazio" id="po9">
+                    <p></p>
+                    <p></p>
+                </div>
+                <div class="vazio" id="po10">
+                    <p></p>
+                    <p></p>
+                </div>
+                <div class="vazio" id="po11">
+                    <p></p>
+                    <p></p>
+                </div>
+                <div class="vazio" id="po12">
+                    <p></p>
+                    <p></p>
+                </div>
+                <div class="vazio" id="po13">
+                    <p></p>
+                    <p></p>
+                </div>
+                <div class="vazio" id="po14">
+                    <p></p>
+                    <p></p>
+                </div>
+                <div class="vazio" id="po15">
+                    <p></p>
+                    <p></p>
+                </div>
+                <div class="vazio" id="po16">
+                    <p></p>
+                    <p></p>
+                </div>
+                <div class="vazio" id="po17">
+                    <p></p>
+                    <p></p>
+                </div>
+                <div class="vazio" id="po18">
+                    <p></p>
+                    <p></p>
+                </div>
+                <div class="vazio" id="po19">
+                    <p></p>
+                    <p></p>
+                </div>
+                <div class="vazio" id="po20">
+                    <p></p>
+                    <p></p>
+                </div>
+        </section>
+    </main>
+
+    <footer>
+
+    </footer>
+    <script src="app.js"></script>
+</body>
+
+</html>

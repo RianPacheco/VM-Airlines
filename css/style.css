@@ -1,0 +1,48 @@
+@import url(./poltronas.css);
+@import url(./header.css);
+@import url(./destino.css);
+
+:root {
+  --fonte-principal: "Inter", sans-serif;
+  --fonte-secundaria: "Space Grotesk", sans-serif;
+  --fonte-terciaria: "Montserrat", sans-serif;
+
+  --cor-principal: #1775bb;
+  --cor-secundaria: #fff;
+  --verde-escuro: #052014;
+  --verde-transparente:#052014B8;
+  --cinza: #EAEAEA;
+  --branco-fumaca: #F5F5F5;
+  --cinza-claro: #F7F7F7;
+  --branco: #FFFFFF;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  user-select: none;
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+}
+
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--cor-secundaria);
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--cor-principal);
+  scroll-behavior: smooth;
+  border-radius: 20px;
+}
+
