@@ -1,0 +1,49 @@
+#sac {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container__sac {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+}
+
+#sac h1 {
+    text-align: center;
+    color: #333;
+}
+
+#sac form {
+    display: flex;
+    flex-direction: column;
+}
+
+#sac label {
+    margin-top: 10px;
+    color: #555;
+}
+
+#sac input, select, textarea {
+    margin-top: 5px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#sac button {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#sac button:hover {
+    background-color: #0056b3;
+}

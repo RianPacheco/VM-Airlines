@@ -15,14 +15,16 @@
 
 <body>
 
-    <header class="cabecalho">
+    <header class="cabecalho" id="cabecalho">
         <div class="cabecalho__navbar ">
             <div class="cabecalho__logo">
-                <img src="./assets/image/Logo.png" alt="logo VM_AIRLINES" class="logo__imagem">
+                <a href="#cabecalho">
+                    <img src="./assets/image/Logo.png" alt="logo VM_AIRLINES" class="logo__imagem">
+                </a>
             </div>
             <div class="navbar__opcoes">
                 <a href="#destinos" class="opcao__link">Destinos</a>
-                <a href="#minhas_viagens" class="opcao__link">Minhas Viagens</a>
+                <a href="#assentos" class="opcao__link">Assentos</a>
                 <a href="#sac" class="opcao__link">Central de Atendimento</a>
             </div>
             <div class="navbar__container">
@@ -37,7 +39,7 @@
                             <a href="#destinos" class="item__link">Destinos</a>
                         </li>
                         <li class="lista__item">
-                            <a href="#minhas_viagens" class="item__link">Minhas Viagens</a>
+                            <a href="#assentos" class="item__link">Assentos</a>
                         </li>
                         <li class="lista__item">
                             <a href="#sac" class="item__link">Central de Atendimento</a>
@@ -92,86 +94,44 @@
             </div>
         </div>
         </section>
-        <section>
-            <div class="poltronas">
-                <div class="vazio" id="po1">
-                    <p></p>
+        <section id="assentos">
+                <div class="container">
+                    <div class="grid">
+                        <!-- Assentos serão gerados aqui pelo JavaScript -->
+                    </div>
+                    <div class="sidebar">
+                        <h2>Assentos</h2><br>
+                        <div class="legend">
+                            <div><span class="economica"></span> ECONOMICA</div>
+                            <div><span class="premium"></span> PREMIUM</div>
+                            <div><span class="executiva"></span> EXECUTIVA</div>
+                        </div>
+                    </div>
                 </div>
-                <div class="vazio" id="po2">
-                    <p></p>
-                </div>
-                <div class="vazio" id="po3">
-                    <p></p>
-                    <p></p>
-                </div>
-                <div class="vazio" id="po4">
-                    <p></p>
-                    <p></p>
-                </div>
-                <div class="vazio" id="po5">
-                    <p></p>
-                    <p></p>
-                </div>
-                <div class="vazio" id="po6">
-                    <p></p>
-                    <p></p>
-                </div>
-                <div class="vazio" id="po7">
-                    <p></p>
-                    <p></p>
-                </div>
-                <div class="vazio" id="po8">
-                    <p></p>
-                    <p></p>
-                </div>
-                <div class="vazio" id="po9">
-                    <p></p>
-                    <p></p>
-                </div>
-                <div class="vazio" id="po10">
-                    <p></p>
-                    <p></p>
-                </div>
-                <div class="vazio" id="po11">
-                    <p></p>
-                    <p></p>
-                </div>
-                <div class="vazio" id="po12">
-                    <p></p>
-                    <p></p>
-                </div>
-                <div class="vazio" id="po13">
-                    <p></p>
-                    <p></p>
-                </div>
-                <div class="vazio" id="po14">
-                    <p></p>
-                    <p></p>
-                </div>
-                <div class="vazio" id="po15">
-                    <p></p>
-                    <p></p>
-                </div>
-                <div class="vazio" id="po16">
-                    <p></p>
-                    <p></p>
-                </div>
-                <div class="vazio" id="po17">
-                    <p></p>
-                    <p></p>
-                </div>
-                <div class="vazio" id="po18">
-                    <p></p>
-                    <p></p>
-                </div>
-                <div class="vazio" id="po19">
-                    <p></p>
-                    <p></p>
-                </div>
-                <div class="vazio" id="po20">
-                    <p></p>
-                    <p></p>
-                </div>
+        </section>
+        <section id="sac">
+            <div class="container__sac">
+                <h1>SAC - VM Airlines</h1>
+                <form id="sac-form">
+                    <label for="name">Nome:</label>
+                    <input type="text" id="name" name="name" required>
+        
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+        
+                    <label for="subject">Assunto:</label>
+                    <select id="subject" name="subject" required>
+                        <option value="duvida">Dúvida</option>
+                        <option value="reclamacao">Reclamação</option>
+                        <option value="sugestao">Sugestão</option>
+                    </select>
+        
+                    <label for="message">Mensagem:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+        
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
         </section>
     </main>
 

@@ -1,4 +1,4 @@
-.poltronas div {
+/* .poltronas div {
     width: 50px;
     height: 50px;
     float: left;
@@ -14,4 +14,70 @@
   .ocupado {
     background-color: tomato;
   }
-  
+   */
+
+
+   
+.container {
+  display: flex;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, 50px);
+  gap: 10px;
+  margin-right: 20px;
+}
+
+.grid div {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.economica {
+  background-color: pink;
+}
+
+.premium {
+  background-color: green;
+}
+
+.executiva {
+  background-color: orange;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.legend {
+  margin-bottom: 20px;
+}
+
+.legend div {
+  margin-bottom: 10px;
+}
+
+.legend span {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: blue;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
