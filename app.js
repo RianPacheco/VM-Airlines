@@ -27,7 +27,7 @@ const precos = {
 let destinoSelecionado = 'São Paulo → Minas Gerais'; // Valor padrão
 let tipoViagemSelecionado = 'Executiva'; // Valor padrão
 let valorPassagem = precos[destinoSelecionado][tipoViagemSelecionado]; // Valor padrão
-
+let valorDespache = 0; 
 
 document.getElementById('tipoPassagemMinas').addEventListener('change', function() {
     destinoSelecionado = 'São Paulo → Minas Gerais';
@@ -46,10 +46,12 @@ document.getElementById('tipoPassagemAcre').addEventListener('change', function(
 // Função para atualizar o valor total no resumo da compra
 function atualizarValorPassagem() {
     document.getElementById('valorPassagem').textContent = `R$ ${valorPassagem}`;
+    atualizarValorTotal(); // Atualiza o valor total
 }
 
 function atualizarValorTotal() {
-    let valorTotal = valorPassagem + valorDespache;
+    const valorTotal = valorPassagem + valorDespache;
+    document.getElementById('valorTotal').textContent = `R$ ${valorTotal}`;
 }
 
 
@@ -128,13 +130,15 @@ function setupDespacheModal() {
 // Funções para atualização de despache
 function updateDespacheValue() {
     const numBolsas = parseInt(this.value) || 0;
-    const valorDespache = numBolsas * 100;
-    document.getElementById('valorDespache').textContent = valorDespache;
+    valorDespache = numBolsas * 100; // Atualiza a variável valorDespache
+    document.getElementById('valorDespache').textContent = `${valorDespache}`;
+    atualizarValorTotal(); // Atualiza o valor total);
 }
 
 function confirmDespache() {
-    const valorDespache = document.getElementById('valorDespache').textContent;
-    document.querySelector('.valorDespache').textContent = 'Valor despache: R$ ' + valorDespache;
+    const valorDespacheTexto = document.getElementById('valorDespache').textContent;
+    document.querySelector('.valorDespache').textContent = 'Valor despache: ' + valorDespacheTexto;
+    atualizarValorTotal(); // Atualiza o valor total
     toggleModal('modal', false);
 }
 
@@ -154,20 +158,22 @@ function showFinalizarModal() {
     document.getElementById('dataCompra').textContent = new Date().toLocaleDateString();
     document.getElementById('destinoViagem').textContent = destinoSelecionado;
     document.getElementById('tipoViagem').textContent = tipoViagemSelecionado;
-    
+
     // Exibir horário atual
     const agora = new Date();
     const horas = String(agora.getHours()).padStart(2, '0');
     const minutos = String(agora.getMinutes()).padStart(2, '0');
     document.getElementById('horario').textContent = `${horas}:${minutos}`;
 
+    // Atualiza valores finais
+    document.getElementById('valorPassagem').textContent = `R$ ${valorPassagem}`
     document.getElementById('valorDespacheFinal').textContent = document.querySelector('.valorDespache').textContent;
+    document.getElementById('valorTotal').textContent = `R$ ${valorPassagem + valorDespache}`; // Atualiza o valor total
 
     const checkinAssentosElement = document.getElementById('checkinAssentos');
     if (checkinAssentosElement) {
         checkinAssentosElement.textContent = assentosSelecionados.join(', '); // Exibe todos os assentos selecionados
     }
-
     toggleModal('modalFinalizar', true);
 }
 
@@ -179,6 +185,7 @@ function showPagamentoModal() {
 function setupPaymentMethods() {
     document.getElementById('pagamentoPix').addEventListener('click', () => processPayment('PIX'));
     document.getElementById('pagamentoBoleto').addEventListener('click', () => processPayment('Boleto'));
+    document.getElementById('pagamentoCartao').addEventListener('click', () => processPayment('Cartão de Debito'));
     document.getElementById('pagamentoCartao').addEventListener('click', () => processPayment('Cartão de Crédito'));
 }
 
@@ -232,3 +239,51 @@ function closeAllModals() {
         modal.style.display = 'none';
     });
 }
+
+// Evento para abrir o modal de consulta de check-in
+document.getElementById('consultarCheckin').addEventListener('click', function() {
+    const codigo = document.getElementById('codigoCheckin').value;
+    if (codigo) {
+        consultarCheckin(codigo);
+    } else {
+        alert('Por favor, insira um código de check-in.');
+    }
+});
+
+// Função para consultar check-in
+function consultarCheckin(codigo) {
+    // Aqui, você deve implementar a lógica para buscar os dados do check-in
+    // Para este exemplo, vou usar dados simulados
+
+    // Verifique se o código corresponde ao check-in gerado anteriormente
+    if (codigo) { // Simulando que o código sempre será válido
+        const destino = destinoSelecionado; // Pega o destino atual
+        const data = new Date().toLocaleDateString();
+
+        // Atualiza os dados no modal
+        document.getElementById('resultadoDestino').textContent = destino;
+        document.getElementById('resultadoData').textContent = data;
+        
+        // Exibe o resultado
+        document.getElementById('resultadoConsulta').style.display = 'block';
+    } else {
+        alert('Código de check-in inválido.');
+    }
+}
+
+document.getElementById('consultarCheckinBtn').addEventListener('click', () => {
+    toggleModal('modalConsultaCheckin', true);
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Código que manipula os modais e os eventos
+
+    document.getElementById('consultarCheckin').addEventListener('click', function() {
+        const codigo = document.getElementById('codigoCheckin').value;
+        if (codigo) {
+            consultarCheckin(codigo);
+        } else {
+            alert('Por favor, insira um código de check-in.');
+        }
+    });
+});

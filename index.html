@@ -105,10 +105,11 @@
                     </div>
                     <button id="despache">Despache</button><br><br>
                     <p class="valorDespache">Valor despache: R$ 0</p><br><br>
-                    <button id="finalizarCompra">Finalizar Compra</button>
+                    <button id="finalizarCompra">Finalizar Compra</button><br><br>
+                    <button id="consultarCheckinBtn">Consultar Check-in</button>
                 </div>
             </div>
-        
+
             <!-- Modal para despacho -->
             <div id="modal" class="modal">
                 <div class="modal-content">
@@ -124,24 +125,24 @@
                     </div>
                 </div>
             </div>
-        
+
             <!-- Modal de finalização -->
             <div id="modalFinalizar" class="modal">
                 <div class="modal-content">
                     <span class="close-btn">&times;</span>
                     <h2>Resumo da Compra</h2><br><br>
-                    <p>Destino: <span id="destinoViagem">São Paulo</span></p><br><br>
+                    <p>Destino: <span id="destinoViagem"></span></p><br><br>
                     <p>Data da Compra: <span id="dataCompra"></span></p><br><br>
                     <p><span id="valorDespacheFinal"></span></p><br><br>
                     <p>Valor Passagem:<span id="valorPassagem"></span></p><br><br>
                     <p>Assentos Selecionados: <span id="checkinAssentos"></span></p><br><br>
-                    <p>Tipo de Viagem: <span id="tipoViagem">Econômica</span></p><br><br>
-                    <p>Valor Total: <span id="valorTotal">R$ 500</span></p><br><br>
+                    <p>Tipo de Viagem: <span id="tipoViagem"></span></p><br><br>
+                    <p>Valor Total: <span id="valorTotal">R$</span></p><br><br>
                     <p>Horário: <span id="horario">14:00</span></p><br><br>
                     <button id="selecionarPagamento">Selecionar Forma de Pagamento</button>
                 </div>
             </div>
-        
+
             <!-- Modal de pagamento -->
             <div id="modalPagamento" class="modal">
                 <div class="modal-content">
@@ -149,11 +150,12 @@
                     <h2>Selecione a Forma de Pagamento</h2><br><br>
                     <button id="pagamentoPix">PIX</button>
                     <button id="pagamentoBoleto">Boleto</button>
+                    <button id="pagamentoCartao">Cartão de Debito</button>
                     <button id="pagamentoCartao">Cartão de Crédito</button>
                     <p id="pagamentoStatus" style="display:none;"></p>
                 </div>
             </div>
-        
+
             <!-- Modal de check-in -->
             <div id="modalCheckin" class="modal">
                 <div class="modal-content">
@@ -163,6 +165,25 @@
                     <p><strong>Data da Compra:</strong> <span id="checkinData"></span></p><br><br>
                     <p><strong>Número de Check-in:</strong> <span id="checkinNumero"></span></p><br><br>
                     <button id="finalizarCheckin">Finalizar Check-in</button>
+                </div>
+            </div>
+            <div id="modalConsultaCheckin" class="modal">
+                <div class="modal-content">
+                    <span class="close-btn">&times;</span>
+                    <h2>Consulta de Check-in</h2><br><br>
+                    <label for="codigoCheckin">Código de Check-in:</label>
+                    <input type="text" id="codigoCheckin" placeholder="Digite seu código"><br><br>
+                    <button id="consultarCheckin">Consultar</button><br><br>
+                    <div id="resultadoConsulta" style="display: none;">
+                        <p><strong>Destino:</strong> <span id="resultadoDestino"></span></p><br>
+                        <p><strong>Data da Compra:</strong> <span id="resultadoData"></span></p><br>
+                        <p><span id="valorDespacheFinal"></span></p><br><br>
+                        <p>Valor Passagem:<span id="valorPassagem"></span></p><br><br>
+                        <p>Assentos Selecionados: <span id="checkinAssentos"></span></p><br><br>
+                        <p>Tipo de Viagem: <span id="tipoViagem">Econômica</span></p><br><br>
+                        <p>Valor Total: <span id="valorTotal">R$</span></p><br><br>
+                        <p>Horário: <span id="horario">14:00</span></p><br><br>
+                    </div>
                 </div>
             </div>
         </section>
