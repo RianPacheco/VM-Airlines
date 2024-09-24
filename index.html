@@ -64,68 +64,106 @@
     <main>
         <section class="destinos" id="destinos">
             <div class="container">
-            <div class="destinos">
-                <h2>DESTINOS</h2>
-                <div class="destino back1">
-                    <label for="saoPauloMinas">SÃO PAULO → MINAS GERAIS</label><br/>
-                    <span>SAÍDA 15:30<br/> PREVISÃO 17:50</span><br/>
-                    <label for="saoPauloMinas">SELECIONE O TIPO DA PASSAGEM</label><br/>
-                    <select name="opcoes" id="opcoes">
-                        <option value="Economica">Economica</option>
-                        <option value="Economica Premium">Economica Premium</option>
-                        <option value="Executiva" selected>Executiva</option>
-                    </select>
+                <div class="destinos">
+                    <h2>DESTINOS</h2>
+                    <div class="destino back1">
+                        <label for="saoPauloMinas">SÃO PAULO → MINAS GERAIS</label><br />
+                        <span>SAÍDA 15:30<br /> PREVISÃO 17:50</span><br />
+                        <label for="saoPauloMinas">SELECIONE O TIPO DA PASSAGEM</label><br />
+                        <select name="opcoes" id="opcoes">
+                            <option value="Economica">Economica</option>
+                            <option value="Economica Premium">Economica Premium</option>
+                            <option value="Executiva" selected>Executiva</option>
+                        </select>
+                    </div>
+                    <p>OU</p>
+                    <br>
+                    <div class="destino back2">
+                        <label for="rioAcre">RIO DE JANEIRO → ACRE</label><br />
+                        <span>SAÍDA 7:20<br /> PREVISÃO 17:20</span><br />
+                        <label for="saoPauloMinas">SELECIONE O TIPO DA PASSAGEM</label><br />
+                        <select name="opcoes" id="opcoes">
+                            <option value="Economica">Economica</option>
+                            <option value="Economica Premium" selected>Economica Premium</option>
+                        </select>
+                    </div>
                 </div>
-                <p>OU</p>
-                <br>
-                <div class="destino back2">
-                    <label for="rioAcre">RIO DE JANEIRO → ACRE</label><br/>
-                    <span>SAÍDA 7:20<br/> PREVISÃO 17:20</span><br/>
-                    <label for="saoPauloMinas">SELECIONE O TIPO DA PASSAGEM</label><br/>
-                    <select name="opcoes" id="opcoes">
-                        <option value="Economica">Economica</option>
-                        <option value="Economica Premium">Economica Premium</option>
-                        <option value="Executiva" selected>Executiva</option>
-                    </select>
+                <div class="image">
+                    <img src="./assets/image/aviao_destinos.PNG" alt="Avião decolando">
                 </div>
             </div>
-            <div class="image">
-                <img src="./assets/image/aviao_destinos.PNG" alt="Avião decolando">
-            </div>
-        </div>
         </section>
         <section id="assentos">
-                <div class="container">
-                    <div class="grid">
-                        <!-- Assentos serão gerados aqui pelo JavaScript -->
+            <div class="container">
+                <div class="grid"></div>
+                <div class="sidebar">
+                    <h2>Assentos</h2>
+                    <div class="legend">
+                        <div><span class="economica"></span> ECONOMICA</div>
+                        <div><span class="premium"></span> PREMIUM</div>
+                        <div><span class="executiva"></span> EXECUTIVA</div>
                     </div>
-                    <div class="sidebar">
-                        <h2>Assentos</h2><br>
-                        <div class="legend">
-                            <div><span class="economica"></span> ECONOMICA</div>
-                            <div><span class="premium"></span> PREMIUM</div>
-                            <div><span class="executiva"></span> EXECUTIVA</div>
-                        </div>
-                        <button id="despache">Despache</button><br>
-                        <p class="valorDespache">Valor despache: 0</p>
+                    <button id="despache">Despache</button><br><br>
+                    <p class="valorDespache">Valor despache: R$ 0</p><br><br>
+                    <button id="finalizarCompra">Finalizar Compra</button>
+                </div>
+            </div>
+        
+            <!-- Modal para despacho -->
+            <div id="modal" class="modal">
+                <div class="modal-content">
+                    <span class="close-btn">&times;</span>
+                    <h2>NECESSITA DE DESPACHE</h2><br><br>
+                    <button id="simBtn">SIM</button>
+                    <button id="naoBtn">NÃO</button>
+                    <div id="simContent" style="display: none;"><br><br>
+                        <label for="numBolsas">NUMERO DE BOLSAS:</label>
+                        <input type="number" id="numBolsas" min="0" value="0"><br><br>
+                        <p>O VALOR DO DESPACHE É DE: R$<span id="valorDespache">0</span></p><br><br>
+                        <button id="confirmarBtn">CONFIRMAR</button>
                     </div>
                 </div>
-                <div id="modal" class="modal">
-                    <div class="modal-content">
-                        <span class="close-btn">&times;</span>
-                        <h2>NECESSITA DE DESPACHE</h2>
-                        <div><br><br>
-                            <button id="simBtn">SIM</button>
-                            <button id="naoBtn">NÃO</button>
-                        </div><br><br>
-                        <div id="simContent" style="display: none;">
-                            <label for="numBolsas">NUMERO DE BOLSAS:</label>
-                            <input type="number" id="numBolsas" min="0" value="0"><br><br>
-                            <p>O VALOR DO DESPACHE É DE: R$<span id="valorDespache">0</span></p><br><br>
-                            <button id="confirmarBtn">CONFIRMAR</button>
-                        </div>
-                    </div>
+            </div>
+        
+            <!-- Modal de finalização -->
+            <div id="modalFinalizar" class="modal">
+                <div class="modal-content">
+                    <span class="close-btn">&times;</span>
+                    <h2>Resumo da Compra</h2><br><br>
+                    <p>Destino: <span id="destinoViagem">São Paulo</span></p><br><br>
+                    <p>Data da Compra: <span id="dataCompra"></span></p><br><br>
+                    <p><span id="valorDespacheFinal"></span></p><br><br>
+                    <p>Assentos Selecionados: <span id="checkinAssentos"></span></p><br><br>
+                    <p>Tipo de Viagem: <span id="tipoViagem">Econômica</span></p><br><br>
+                    <p>Valor Total: <span id="valorTotal">R$ 500</span></p><br><br>
+                    <p>Horário: <span id="horario">14:00</span></p><br><br>
+                    <button id="selecionarPagamento">Selecionar Forma de Pagamento</button>
                 </div>
+            </div>
+        
+            <!-- Modal de pagamento -->
+            <div id="modalPagamento" class="modal">
+                <div class="modal-content">
+                    <span class="close-btn">&times;</span>
+                    <h2>Selecione a Forma de Pagamento</h2><br><br>
+                    <button id="pagamentoPix">PIX</button>
+                    <button id="pagamentoBoleto">Boleto</button>
+                    <button id="pagamentoCartao">Cartão de Crédito</button>
+                    <p id="pagamentoStatus" style="display:none;"></p>
+                </div>
+            </div>
+        
+            <!-- Modal de check-in -->
+            <div id="modalCheckin" class="modal">
+                <div class="modal-content">
+                    <span class="close-btn">&times;</span>
+                    <h2>Check-in Realizado</h2><br><br>
+                    <p><strong>Destino:</strong> <span id="checkinDestino"></span></p><br><br>
+                    <p><strong>Data da Compra:</strong> <span id="checkinData"></span></p><br><br>
+                    <p><strong>Número de Check-in:</strong> <span id="checkinNumero"></span></p><br><br>
+                    <button id="finalizarCheckin">Finalizar Check-in</button>
+                </div>
+            </div>
         </section>
         <section id="sac">
             <div class="container__sac">
@@ -133,20 +171,20 @@
                 <form id="sac-form">
                     <label for="name">Nome:</label>
                     <input type="text" id="name" name="name" required>
-        
+
                     <label for="email">Email:</label>
                     <input type="email" id="email" name="email" required>
-        
+
                     <label for="subject">Assunto:</label>
                     <select id="subject" name="subject" required>
                         <option value="duvida">Dúvida</option>
                         <option value="reclamacao">Reclamação</option>
                         <option value="sugestao">Sugestão</option>
                     </select>
-        
+
                     <label for="message">Mensagem:</label>
                     <textarea id="message" name="message" rows="5" required></textarea>
-        
+
                     <button type="submit">Enviar</button>
                 </form>
             </div>
