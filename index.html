@@ -69,10 +69,10 @@
                     <div class="destino back1">
                         <label for="saoPauloMinas">SÃO PAULO → MINAS GERAIS</label><br />
                         <span>SAÍDA 15:30<br /> PREVISÃO 17:50</span><br />
-                        <label for="saoPauloMinas">SELECIONE O TIPO DA PASSAGEM</label><br />
-                        <select name="opcoes" id="opcoes">
-                            <option value="Economica">Economica</option>
-                            <option value="Economica Premium">Economica Premium</option>
+                        <label for="tipoPassagemMinas">SELECIONE O TIPO DA PASSAGEM</label><br />
+                        <select name="tipoPassagemMinas" id="tipoPassagemMinas">
+                            <option value="Economica">Econômica</option>
+                            <option value="Economica Premium">Econômica Premium</option>
                             <option value="Executiva" selected>Executiva</option>
                         </select>
                     </div>
@@ -81,10 +81,10 @@
                     <div class="destino back2">
                         <label for="rioAcre">RIO DE JANEIRO → ACRE</label><br />
                         <span>SAÍDA 7:20<br /> PREVISÃO 17:20</span><br />
-                        <label for="saoPauloMinas">SELECIONE O TIPO DA PASSAGEM</label><br />
-                        <select name="opcoes" id="opcoes">
-                            <option value="Economica">Economica</option>
-                            <option value="Economica Premium" selected>Economica Premium</option>
+                        <label for="tipoPassagemAcre">SELECIONE O TIPO DA PASSAGEM</label><br />
+                        <select name="tipoPassagemAcre" id="tipoPassagemAcre">
+                            <option value="Economica">Econômica</option>
+                            <option value="Economica Premium" selected>Econômica Premium</option>
                         </select>
                     </div>
                 </div>
@@ -97,7 +97,7 @@
             <div class="container">
                 <div class="grid"></div>
                 <div class="sidebar">
-                    <h2>Assentos</h2>
+                    <h2>Assentos</h2><br><br>
                     <div class="legend">
                         <div><span class="economica"></span> ECONOMICA</div>
                         <div><span class="premium"></span> PREMIUM</div>
@@ -133,6 +133,7 @@
                     <p>Destino: <span id="destinoViagem">São Paulo</span></p><br><br>
                     <p>Data da Compra: <span id="dataCompra"></span></p><br><br>
                     <p><span id="valorDespacheFinal"></span></p><br><br>
+                    <p>Valor Passagem:<span id="valorPassagem"></span></p><br><br>
                     <p>Assentos Selecionados: <span id="checkinAssentos"></span></p><br><br>
                     <p>Tipo de Viagem: <span id="tipoViagem">Econômica</span></p><br><br>
                     <p>Valor Total: <span id="valorTotal">R$ 500</span></p><br><br>

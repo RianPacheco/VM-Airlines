@@ -12,6 +12,47 @@ navList.addEventListener('click', () => {
     navList.style.display = 'none';
 });
 
+const precos = {
+    "São Paulo → Minas Gerais": {
+        "Economica": 799,
+        "Economica Premium": 1399,
+        "Executiva": 1999
+    },
+    "Rio de Janeiro → Acre": {
+        "Economica": 899,
+        "Economica Premium": 1499
+    }
+};
+
+let destinoSelecionado = 'São Paulo → Minas Gerais'; // Valor padrão
+let tipoViagemSelecionado = 'Executiva'; // Valor padrão
+let valorPassagem = precos[destinoSelecionado][tipoViagemSelecionado]; // Valor padrão
+
+
+document.getElementById('tipoPassagemMinas').addEventListener('change', function() {
+    destinoSelecionado = 'São Paulo → Minas Gerais';
+    tipoViagemSelecionado = this.value;
+    valorPassagem = precos[destinoSelecionado][tipoViagemSelecionado]; // Atualiza o valor
+    atualizarValorPassagem();
+});
+
+document.getElementById('tipoPassagemAcre').addEventListener('change', function() {
+    destinoSelecionado = 'Rio de Janeiro → Acre';
+    tipoViagemSelecionado = this.value;
+    valorPassagem = precos[destinoSelecionado][tipoViagemSelecionado]; // Atualiza o valor
+    atualizarValorPassagem();
+});
+
+// Função para atualizar o valor total no resumo da compra
+function atualizarValorPassagem() {
+    document.getElementById('valorPassagem').textContent = `R$ ${valorPassagem}`;
+}
+
+function atualizarValorTotal() {
+    let valorTotal = valorPassagem + valorDespache;
+}
+
+
 let assentosSelecionados = []; // Array para armazenar assentos selecionados
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -111,6 +152,8 @@ function setupFinalizarModal() {
 
 function showFinalizarModal() {
     document.getElementById('dataCompra').textContent = new Date().toLocaleDateString();
+    document.getElementById('destinoViagem').textContent = destinoSelecionado;
+    document.getElementById('tipoViagem').textContent = tipoViagemSelecionado;
     
     // Exibir horário atual
     const agora = new Date();
@@ -146,7 +189,7 @@ function processPayment(metodo) {
 }
 
 function mostrarCheckin(destino, data, numero) {
-    document.getElementById('checkinDestino').textContent = destino;
+    document.getElementById('checkinDestino').textContent = destinoSelecionado;
     document.getElementById('checkinData').textContent = data;
     document.getElementById('checkinNumero').textContent = numero;
     toggleModal('modalCheckin', true);
